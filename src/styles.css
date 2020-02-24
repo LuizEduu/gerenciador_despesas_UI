@@ -17,11 +17,20 @@ label {
 }
 
 .col-valor {
-  width: 120px;
-  text-align: right;
+  width: 100px!important;
+  text-align: center;
 }
 
 .col-data {
-  width: 120px;
+  width: 170px!important;
   text-align: center;
+}
+
+.actions {
+  width: 120px!important;
+  text-align: center;
+}
+
+.buttonTable {
+  margin-right: 10px!important;
 }

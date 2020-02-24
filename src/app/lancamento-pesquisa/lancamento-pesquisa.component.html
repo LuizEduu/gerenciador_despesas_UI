@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <h1>Lançamentos</h1>
+    </div>
+
+    <div class="ui-g-12 ui-fluid">
+      <label>Descrição: </label>
+      <input type="text" pInputText>
+    </div>
+
+    <div class="ui-g-12">
+      <label style="display: block;"> Vencimento: </label>
+      <input type="text" pInputTex style="width: 100px;">
+      <label> até </label>
+      <input type="text" pInputText style="width: 100px;">
+    </div>
+
+    <div class="ui-g-12">
+      <button pButton type="submit" label="Pesquisar"></button>
+    </div>
+
+  </div>
+  <div class="ui-g">
+    <div class="ui-g-12">
+
+      <p-table #dt [columns]="cols" [value]="cars" [paginator]="true" [rows]="3"
+       [responsive]="true">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Pessoa</th>
+            <th>Descrição</th>
+            <th class="col-data">Data de Vencimento</th>
+            <th class="col-data">Data de Pagamento</th>
+            <th class="col-valor">Valor</th>
+            <th class="actions"></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-car>
+          <tr>
+            <td>{{car.marca}}</td>
+            <td>{{car.modelo}}</td>
+            <td class="col-data">{{car.ano}}</td>
+            <td class="col-data" [style.color]="car.tipo === '1' ? 'red' : 'blue'">
+              {{car.motor}}</td>
+            <td class="col-valor">{{car.valor}}</td>
+            <td>
+              <a pButton icon="pi pi-pencil" class="buttonTable" pTooltip="Editar"
+              tooltipPosition="top"></a>
+              <button class="ui-button-danger" pButton icon="pi pi-trash"
+              pTooltip="Excluir"
+                tooltipPosition="top"></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+
+    <div class="ui-g-12">
+      <button pButton label="Novo Lançamento"></button>
+    </div>
+  </div>
+</div>
